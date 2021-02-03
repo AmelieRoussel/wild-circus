@@ -1,0 +1,13 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}{{ parent() }} | Ajouter une catégorie{% endblock %}
+{% block body %}
+    <h1 class="text-center mt-4">Ajouter une catégorie</h1>
+    <div class="new container ">
+        {{ include('admin/category/_form.html.twig') }}
+        <div class="row mx-0">
+            <a class="back text-decoration-none text-dark btn rounded-pill my-4 px-3 py-1"
+               href="{{ path('admin_category_index') }}">Retour</a>
+        </div>
+    </div>
+{% endblock %}
