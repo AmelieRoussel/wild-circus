@@ -1,0 +1,22 @@
+@import 'variable.scss';
+
+main {
+  padding-bottom: $spacing4;
+
+  .header {
+    background-image: url('../images/header_login.jpg');
+  }
+
+  .button-login {
+    border: none;
+    outline: none;
+  }
+
+  .form-control {
+    color: $dark;
+
+    &::placeholder {
+      color: $secondary;
+    }
+  }
+}

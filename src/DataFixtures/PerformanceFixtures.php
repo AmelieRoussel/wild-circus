@@ -43,7 +43,7 @@ class PerformanceFixtures extends Fixture implements DependentFixtureInterface
             $imageName = uniqid() . '.jpg';
             copy($image, __DIR__ . '/../../public/uploads/' . $imageName);
             $performance->setPicture($imageName);
-            $performance->setDescription($faker->text(1000));
+            $performance->setDescription($faker->text(600));
             foreach ($data['categories'] as $category) {
                 $performance->addCategory($this->getReference($category));
             }
