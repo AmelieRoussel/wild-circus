@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Kaushan+Script&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Kaushan+Script&family=Roboto:wght@300&display=swap');
 
 $title-font-light: 'Handlee', cursive;
 $title-font: 'Kaushan Script', cursive;
@@ -20,3 +20,7 @@ $navbar-height: 76px;
 $navbar-font-size: 1.3rem;
 $navbar-logo-height: 50px;
 $header-height: 60vh;
+$custom-file-text: (
+        en: "Browse",
+        fr: "Parcourir"
+);

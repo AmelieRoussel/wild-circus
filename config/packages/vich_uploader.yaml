@@ -1,7 +1,7 @@
 vich_uploader:
     db_driver: orm
     mappings:
-        performance_file:
+        picture_file:
             uri_prefix: /uploads
             upload_destination: '%upload_directory%'
             delete_on_update: true

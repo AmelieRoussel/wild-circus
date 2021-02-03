@@ -12,6 +12,7 @@ use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass=PerformanceRepository::class)
+ * @Vich\Uploadable
  */
 class Performance
 {
@@ -41,12 +42,12 @@ class Performance
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private ?string $picture;
+    private ?string $picture = null;
 
     /**
-     * @Vich\UploadableField(mapping="performance_file", fileNameProperty="picture")
+     * @Vich\UploadableField(mapping="picture_file", fileNameProperty="picture")
      */
-    private ?File $pictureFile;
+    private ?File $pictureFile = null;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
