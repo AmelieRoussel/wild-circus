@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+{% block title %}{{ parent() }} | Performances{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('performance') }}
+{% endblock %}
+
+{% block body %}
+    <main class="performances">
+        <div class="header mt-0 d-flex align-items-center justify-content-center">
+            <h1 class="text-center text-light">Les performances</h1>
+        </div>
+        <h2 class="text-center reveal-2">
+            Découvrez des numéros toujours plus impressionnants !
+        </h2>
+
+        <div class="container mb-5">
+            {% for performance in performances %}
+                <div class="card border-0 bg-light my-5 py-5">
+                    <div class="row mx-0 no-gutters {{ loop.index is even ? 'flex-row-reverse' }}">
+                        <div class="col-md-3 d-flex justify-content-center align-items-center">
+                            <img src="{{ asset('uploads/' ~ performance.picture) }}"
+                                 class="card-img img-fluid logo" alt="logo">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h2 class="card-title h3 pt-0 mt-0">{{ performance.name }}</h2>
+                                <div class="card-text">{{ performance.description }}</div>
+                                {% for category in performance.categories %}
+                                    <div class="badge badge-primary px-2 py-2 mr-2 mt-3">
+                                        {{ category.name }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}
+

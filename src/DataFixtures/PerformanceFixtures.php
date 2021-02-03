@@ -24,7 +24,7 @@ class PerformanceFixtures extends Fixture implements DependentFixtureInterface
             'picture' => 'https://www.gannett-cdn.com/presto/2019/07/10/PFTM/86860a60-b91e-444c-85c4-1e1e41101190-Corteo_CLOWN_Costumes_Dominique_Lemieux_2018_Cirque_du_Soleil_Photo_7.jpg',
         ],
         'Funambule' => [
-            'categories' => ['category_0', 'category_2',],
+            'categories' => ['category_0', 'category_4',],
             'picture' => 'https://cdn-s-www.leprogres.fr/images/283F3F1C-C61A-4225-90B6-68320C7947B6/NW_detail_M/sur-ses-epaules-a-huit-metres-du-sol-elena-escalera-porte-abdul-danguir-un-numero-perilleux-qu-ils-travaillent-depuis-des-annees-photo-pierre-augros-1576680650.jpg',
         ],
         'Magicien' => [
@@ -43,7 +43,7 @@ class PerformanceFixtures extends Fixture implements DependentFixtureInterface
             $imageName = uniqid() . '.jpg';
             copy($image, __DIR__ . '/../../public/uploads/' . $imageName);
             $performance->setPicture($imageName);
-            $performance->setDescription($faker->text);
+            $performance->setDescription($faker->text(1000));
             foreach ($data['categories'] as $category) {
                 $performance->addCategory($this->getReference($category));
             }

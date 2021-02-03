@@ -55,3 +55,30 @@ h4, h5, h6 {
     font-family: $title-font;
     color: $primary;
 }
+
+h1 {
+    font-size: $h1-font-size;
+    padding-top: $spacing4;
+    margin-bottom: $spacing3;
+}
+
+h2 {
+    font-size: $h2-font-size;
+    margin: $spacing4 0;
+}
+
+h3 {
+    font-size: $h3-font-size;
+}
+
+section {
+    padding: $spacing4 0;
+}
+
+.header {
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: $header-height;
+}
