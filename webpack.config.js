@@ -35,6 +35,7 @@ Encore
     .addEntry('app', './assets/app.js')
     .addEntry('contact', './assets/styles/contact.scss')
     .addEntry('home', './assets/styles/home.scss')
+    .addEntry('performance', './assets/styles/performance.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
