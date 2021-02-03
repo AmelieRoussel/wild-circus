@@ -7,12 +7,14 @@
 }
 
 .back {
-  background-color: $secondary;
-  box-shadow: 0 2px 0.5rem lighten($dark, 5%);
+  color: $light;
+  background-color: $dark;
+  box-shadow: 0 1px 0.25rem darken($secondary, 50%);
 
   &:hover {
-    background-color: lighten($secondary, 3%);
-    box-shadow: 0 0 1rem lighten($primary, 10%);
+    color: $light;
+    background-color: lighten($dark, 30%);
+    box-shadow: 0 1px 0.5rem darken($secondary, 10%);
   }
 }
 
@@ -42,4 +44,8 @@ form {
   svg {
     color: $dark;
   }
+}
+
+img, .logo {
+  max-height: 425px;
 }

@@ -1,12 +1,12 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %} {{ parent() }} | Liste des catégories {% endblock %}
+{% block title %} {{ parent() }} | Liste des performances {% endblock %}
 
 {% block body %}
-    <h1 class="text-center mt-4">Liste des catégories</h1>
+    <h1 class="text-center mt-4">Liste des performance</h1>
     <div class="container">
         <div class="d-flex justify-content-end mr-2 pb-4">
-            <a href="{{ path('admin_category_new') }}" title="Ajouter une catégorie">
+            <a href="{{ path('admin_performance_new') }}" title="Ajouter une performance">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                      class="bi bi-plus-square-fill" viewBox="0 0 16 16">
                     <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
@@ -17,16 +17,25 @@
         <table class="table table-striped">
             <thead class="bg-primary text-white">
             <tr>
-                <th>Catégorie</th>
+                <th>Performance</th>
                 <th class="text-right">Actions</th>
             </tr>
             </thead>
             <tbody>
-            {% for category in categories %}
+            {% for performance in performances %}
                 <tr>
-                    <td>{{ category.name }}</td>
+                    <td>{{ performance.name }}</td>
                     <td class="row align-items-center justify-content-end pr-4 action">
-                        <a href="{{ path('admin_category_edit', {'id': category.id}) }}" title="Modifier" class="mr-4">
+                        <a class="mx-2 text-decoration-none"
+                           href="{{ path('admin_performance_show', {'id': performance.id}) }}" title="Détails">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                 class="bi bi-info-square" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                            </svg>
+                        </a>
+                        <a href="{{ path('admin_performance_edit', {'id': performance.id}) }}" title="Modifier"
+                           class="mx-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0b090a"
                                  class="bi bi-pencil-square" viewBox="0 0 16 16">
                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
@@ -34,12 +43,12 @@
                                       d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                             </svg>
                         </a>
-                        {{ include('admin/category/_delete_form.html.twig') }}
+                        {{ include('admin/performance/_delete_form.html.twig') }}
                     </td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="3">Aucune catégorie trouvée</td>
+                    <td colspan="6">Aucune performance trouvée</td>
                 </tr>
             {% endfor %}
             </tbody>
