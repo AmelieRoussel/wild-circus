@@ -43,4 +43,14 @@ class HomeController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+    /**
+     * @Route("/admin", name="admin_home", methods={"GET"})
+     * @return Response
+     */
+    public function admin(): Response
+    {
+        return $this->render('admin/home/index.html.twig');
+
+    }
 }

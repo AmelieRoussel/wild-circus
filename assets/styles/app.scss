@@ -20,6 +20,7 @@ body {
 .navbar {
     min-height: $navbar-height;
     font-family: $title-font;
+    opacity: 0.9;
 
     .site-title {
         font-size: 1.8rem;
