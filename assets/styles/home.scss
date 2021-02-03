@@ -1,5 +1,17 @@
 @import 'variable.scss';
 
+.header {
+  background-image: url('../images/header_homepage2.jpg');
+  height: 92vh;
+  text-shadow: 1px 1px $dark, -1px -1px $dark;
+}
+
+.about-us {
+  .acrobate {
+    max-width: 100vw;
+  }
+}
+
 .contact {
   padding-bottom: $spacing4;
 
