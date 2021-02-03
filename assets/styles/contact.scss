@@ -1,0 +1,28 @@
+@import 'variable.scss';
+
+main {
+  padding-bottom: $spacing4;
+
+  .header {
+    background-image: url('../images/header_contact.jpg');
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: $header-height;
+  }
+
+
+  .button-contact {
+    border: none;
+    outline: none;
+  }
+
+  .form-control {
+    color: $dark;
+
+    &::placeholder {
+      color: $secondary;
+    }
+  }
+}

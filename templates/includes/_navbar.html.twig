@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top align-items-center">
-    <a class="navbar-brand text-light" href="#">
+    <a class="navbar-brand text-light site-title" href="{{ path("home") }}">
         <img src="{{ asset('build/images/juggler.png') }}" alt="logo" class="logo mr-3">
         Wild Circus
     </a>
@@ -19,7 +19,7 @@
                 <a class="nav-link text-light" href="#">Tarifs</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="nav-link text-light" href="#">Contact</a>
+                <a class="nav-link text-light" href="{{ path("contact") }}">Contact</a>
             </li>
         </ul>
     </div>

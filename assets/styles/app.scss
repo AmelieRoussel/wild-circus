@@ -17,6 +17,11 @@ body {
 
 .navbar {
     min-height: $navbar-height;
+    font-family: $title-font;
+
+    .site-title {
+        font-size: 1.8rem;
+    }
 
     .logo {
         height: $navbar-logo-height;
@@ -25,4 +30,28 @@ body {
     li {
         font-size: $navbar-font-size;
     }
+}
+
+.button-primary {
+    font-weight: 700;
+    color: $light;
+    background-color: $primary;
+    box-shadow: 0 1px 0.25rem darken($secondary, 50%);
+
+    &:hover {
+        color: $light;
+        background-color: lighten($primary, 3%);
+        box-shadow: 0 1px 0.5rem darken($primary, 10%);
+    }
+}
+
+h1, h2, h3 {
+    font-family: $title-font;
+    font-weight: 700;
+    color: $primary;
+}
+
+h4, h5, h6 {
+    font-family: $title-font;
+    color: $primary;
 }
