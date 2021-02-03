@@ -86,3 +86,9 @@ section {
     background-size: cover;
     height: $header-height;
 }
+
+.footer {
+    svg {
+        color: $secondary;
+    }
+}

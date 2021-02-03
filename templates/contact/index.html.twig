@@ -11,8 +11,8 @@
         <div class="header mt-0 d-flex align-items-center justify-content-center">
             <h1 class="text-center text-light mt-5 d-flex reveal-1">Contact</h1>
         </div>
-        <div class="container">
-            <h2 class="text-center py-5 reveal-2">Nous contacter</h2>
+        <section class="contact container">
+            <h2 class="text-center">Nous contacter</h2>
             {{ form_start(form) }}
             {{ form_widget(form) }}
             <div class="col text-center pt-4">
@@ -21,6 +21,28 @@
                 </button>
             </div>
             {{ form_end(form) }}
-        </div>
+        </section>
+        <section class="find-us container pt-0">
+            <h2 class="text-center">Nous retrouver</h2>
+            <div class="row mx-0">
+                <div class="col-md-9 col-lg-6">
+                    <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=1.893400847911835%2C47.89303916510199%2C1.8967482447624209%2C47.89470092110348&amp;layer=mapnik&amp;marker=47.89387004976874%2C1.8950745463371277"
+                            style="border: 1px solid black" class="mw-100"></iframe>
+                    <br/>
+                    <small>
+                        <a href="https://www.openstreetmap.org/?mlat=47.89387&amp;mlon=1.89507#map=19/47.89387/1.89507">
+                            Afficher une carte plus grande
+                        </a>
+                    </small>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="text-center mb-4">Les représentations</h3>
+                    <p>Mercredi : 16h</p>
+                    <p>Samedi : 16h</p>
+                    <p>Dimanche : 14h</p>
+                </div>
+            </div>
+        </section>
     </main>
 {% endblock %}
