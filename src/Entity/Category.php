@@ -25,9 +25,9 @@ class Category
     private string $name;
 
     /**
-     * @ORM\OneToMany(targetEntity=Performance::class, mappedBy="category")
+     * @ORM\ManyToMany(targetEntity=Performance::class, mappedBy="categories")
      */
-    private $performances;
+    private Collection $performances;
 
     public function __construct()
     {
@@ -63,7 +63,7 @@ class Category
     {
         if (!$this->performances->contains($performance)) {
             $this->performances[] = $performance;
-            $performance->setCategory($this);
+            $performance->addCategory($this);
         }
 
         return $this;
@@ -72,10 +72,7 @@ class Category
     public function removePerformance(Performance $performance): self
     {
         if ($this->performances->removeElement($performance)) {
-            // set the owning side to null (unless already changed)
-            if ($performance->getCategory() === $this) {
-                $performance->setCategory(null);
-            }
+            $performance->removeCategory($this);
         }
 
         return $this;

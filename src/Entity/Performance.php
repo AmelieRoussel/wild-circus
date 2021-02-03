@@ -7,6 +7,8 @@ use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass=PerformanceRepository::class)
@@ -26,10 +28,10 @@ class Performance
     private string $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="performances")
+     * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="performances")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $category;
+    private Collection $categories;
 
     /**
      * @ORM\Column(type="text")
@@ -51,6 +53,11 @@ class Performance
      */
     private $updatedAt;
 
+    public function __construct()
+    {
+        $this->categories = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,14 +75,22 @@ class Performance
         return $this;
     }
 
-    public function getCategory(): ?Category
+    public function getCategories(): Collection
     {
-        return $this->category;
+        return $this->categories;
     }
 
-    public function setCategory(?Category $category): self
+    public function addCategory(Category $category): self
     {
-        $this->category = $category;
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+        }
+        return $this;
+    }
+
+    public function removeCategory(Category $category): self
+    {
+        $this->categories->removeElement($category);
 
         return $this;
     }
