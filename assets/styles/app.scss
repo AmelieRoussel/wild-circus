@@ -2,14 +2,27 @@
 @import "~bootstrap/scss/bootstrap";
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: $text-font;
-  font-size: $text-font-size;
-  color: $dark;
-  background-color: $light;
+    font-family: $text-font;
+    font-size: $text-font-size;
+    color: $dark;
+    background-color: $light;
+    margin-top: $navbar-height;
+}
+
+.navbar {
+    min-height: $navbar-height;
+
+    .logo {
+        height: $navbar-logo-height;
+    }
+
+    li {
+        font-size: $navbar-font-size;
+    }
 }
