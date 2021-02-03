@@ -6,9 +6,45 @@
 {% endblock %}
 
 {% block body %}
+    <div class="header mt-0 d-flex align-items-center justify-content-center">
+        <h1 class="text-center text-light pt-0">Wild Circus</h1>
+    </div>
+
+    <section id="aboutUs" class="about-us container px-0 px-md-3">
+        <h2 class="text-center">Notre cirque</h2>
+        <div class="row mx-0">
+            <div class="col-lg-5 px-0 px-md-3 d-flex justify-content-center align-items-center mb-5 mb-lg-0">
+                <img src="{{ asset('build/images/about-us.png') }}"
+                     class="acrobate" alt="Acrobate">
+            </div>
+            <div class="col-lg-6">
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit diam sem, eu mattis ante
+                    mattis ut.
+                    Ut consectetur placerat risus, et consectetur nisl. Sed a scelerisque orci, vel mollis odio. Sed
+                    vitae tempus neque.
+                    Morbi vitae fringilla nunc. Nunc sit amet pretium magna. Nullam non ipsum diam. Vestibulum fringilla
+                    risus nec tempor facilisis.
+                    Sed elementum magna eget purus tincidunt, consequat ornare leo facilisis. Donec nibh erat, sagittis
+                    id ligula blandit,
+                    ullamcorper egestas risus. Etiam tincidunt nunc elit, quis scelerisque nisl luctus ac. Donec non
+                    porta sem, vel iaculis enim.
+                    Donec ultricies urna ac quam pellentesque efficitur. In interdum dignissim mauris sed ornare. Donec
+                    aliquam, felis ac lobortis consectetur,
+                    ligula mi luctus felis, commodo placerat dui erat eu nisl. </p>
+            </div>
+        </div>
+    </section>
     <section class="contact">
+        <div class="d-flex justify-content-center py-2">
+            <a href="{{ path('performance') }}"
+               class="button-primary text-decoration-none btn-lg rounded-pill my-4 px-5 py-3">
+                Venez découvrir nos performances !
+            </a>
+        </div>
+    </section>
+    <section class="contact pt-0 mt-O">
         <div class="container">
-            <h2 class="text-center py-5 reveal-2">Nous contacter</h2>
+            <h2 class="text-center">Nous contacter</h2>
             {{ form_start(form) }}
             {{ form_widget(form) }}
             <div class="col text-center pt-4">

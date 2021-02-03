@@ -9,10 +9,12 @@
 
 body {
     font-family: $text-font;
+    font-weight: 300;
     font-size: $text-font-size;
     color: $dark;
     background-color: $light;
     margin-top: $navbar-height;
+    line-height: 200%;
 }
 
 .navbar {
