@@ -4,3 +4,7 @@
         {{ parent() }}
         {{ encore_entry_link_tags('admin') }}
     {% endblock %}
+
+ {% block header %}
+     {% block navbar %} {% include 'includes/_navbarAdmin.html.twig' %} {% endblock %}
+ {% endblock %}

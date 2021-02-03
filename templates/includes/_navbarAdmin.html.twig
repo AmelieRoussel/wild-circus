@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top align-items-center">
+    <a class="navbar-brand text-light site-title" href="{{ path("home") }}" target="_blank">
+        <img src="{{ asset('build/images/juggler.png') }}" alt="logo" class="logo mr-3">
+        Wild Circus
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbar">
+        <ul class="navbar-nav mt-4 mb-2 my-lg-0">
+            <li class="nav-item ml-3">
+                <a class="nav-link text-light" href="{{ path("admin_home") }}">Accueil</a>
+            </li>
+            <li class="nav-item ml-3">
+                <a class="nav-link text-light" href="{{ path("admin_performance_index") }}">Performances</a>
+            </li>
+            <li class="nav-item ml-3">
+                <a class="nav-link text-light" href="{{ path("admin_category_index") }}">Catégories</a>
+            </li>
+        </ul>
+    </div>
+</nav>
