@@ -1,0 +1,18 @@
+@import 'variable.scss';
+
+.contact {
+  padding-bottom: $spacing4;
+
+  .button-contact {
+    border: none;
+    outline: none;
+  }
+
+  .form-control {
+    color: $dark;
+
+    &::placeholder {
+      color: $secondary;
+    }
+  }
+}

@@ -7,18 +7,20 @@ use App\Form\ContactType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class ContactController extends AbstractController
 {
     /**
-     * @Route("/", name="home", methods={"GET", "POST"})
+     * @Route("/contact", name="contact", methods={"GET","POST"})
      * @param Request $request
      * @param MailerInterface $mailer
+     * @var string $from
      * @return Response
-     * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
+     * @throws TransportExceptionInterface
      */
     public function index(Request $request, MailerInterface $mailer): Response
     {
@@ -36,11 +38,12 @@ class HomeController extends AbstractController
 
             $this->addFlash('success', 'Votre message a bien été envoyé.');
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('contact');
         }
 
-        return $this->render('home/index.html.twig', [
+        return $this->render('contact/index.html.twig', [
             'form' => $form->createView()
         ]);
     }
+
 }

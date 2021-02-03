@@ -1,12 +1,16 @@
 {% extends 'layout.html.twig' %}
 
+{% block title %}{{ parent() }} | Contact{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
-    {{ encore_entry_link_tags('home') }}
+    {{ encore_entry_link_tags('contact') }}
 {% endblock %}
 
 {% block body %}
-    <section class="contact">
+    <main>
+        <div class="header mt-0 d-flex align-items-center justify-content-center">
+            <h1 class="text-center text-light mt-5 d-flex reveal-1">Contact</h1>
+        </div>
         <div class="container">
             <h2 class="text-center py-5 reveal-2">Nous contacter</h2>
             {{ form_start(form) }}
@@ -18,5 +22,5 @@
             </div>
             {{ form_end(form) }}
         </div>
-    </section>
+    </main>
 {% endblock %}
