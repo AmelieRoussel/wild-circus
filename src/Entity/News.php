@@ -24,14 +24,14 @@ class News
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length
+     * @Assert\Length(max="255")
      * @Assert\NotBlank
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length
+     * @Assert\Length(max="255")
      * @Assert\NotBlank
      */
     private $presentation;

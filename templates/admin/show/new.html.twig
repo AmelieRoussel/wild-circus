@@ -1,13 +1,13 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}{{ parent() }} | Ajouter un cours {% endblock %}
+{% block title %}{{ parent() }} | Ajouter un tarif{% endblock %}
 {% block body %}
-    <h1 class="text-center mt-4">Ajouter un cours</h1>
+    <h1 class="text-center mt-4">Ajouter un tarif</h1>
     <div class="new container ">
-        {{ include('admin/course/_form.html.twig') }}
+        {{ include('admin/show/_form.html.twig') }}
         <div class="row mx-0">
             <a class="back text-decoration-none btn rounded-pill my-4 px-3 py-1"
-               href="{{ path('admin_course_index') }}">Retour</a>
+               href="{{ path('admin_show_index') }}">Retour</a>
         </div>
     </div>
 {% endblock %}

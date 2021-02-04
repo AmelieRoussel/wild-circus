@@ -43,6 +43,8 @@ class AdminCourseController extends AbstractController
             $entityManager->persist($course);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Le cours a bien été ajouté.');
+
             return $this->redirectToRoute('admin_course_index');
         }
 

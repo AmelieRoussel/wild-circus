@@ -40,8 +40,8 @@ class EnrollmentType extends AbstractType
                 'attr' => ['placeholder' => '0654678534']
             ])
             ->add('course', null, [
-                'label' => 'Créneau de cours choisi',
-                'choice_label' => 'day',
+                'label' => 'Cours choisi',
+                'choice_label' => 'category',
                 'expanded' => false,
                 'multiple' => false,
                 'required' => true,

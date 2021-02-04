@@ -21,16 +21,22 @@ class Course
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=15)
+     * @ORM\Column(type="string", length=50)
      * @Assert\NotBlank
      */
-    private $day;
+    private $category;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="integer")
      * @Assert\NotBlank
      */
-    private $hour;
+    private $price;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank
+     */
+    private $time;
 
     /**
      * @ORM\OneToMany(targetEntity=Member::class, mappedBy="course")
@@ -45,30 +51,6 @@ class Course
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getDay(): ?string
-    {
-        return $this->day;
-    }
-
-    public function setDay(string $day): self
-    {
-        $this->day = $day;
-
-        return $this;
-    }
-
-    public function getHour(): ?string
-    {
-        return $this->hour;
-    }
-
-    public function setHour(string $hour): self
-    {
-        $this->hour = $hour;
-
-        return $this;
     }
 
     /**
@@ -97,6 +79,42 @@ class Course
                 $member->setCourse(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function setPrice($price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getTime(): ?string
+    {
+        return $this->time;
+    }
+
+    public function setTime(string $time): self
+    {
+        $this->time = $time;
 
         return $this;
     }

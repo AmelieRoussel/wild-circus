@@ -37,7 +37,33 @@
             Donec ultricies urna ac quam pellentesque efficitur. In interdum dignissim mauris sed ornare. Donec
             aliquam, felis ac lobortis consectetur,
             ligula mi luctus felis, commodo placerat dui erat eu nisl.</p>
-        <section>
+        <section class="price">
+            <div class="container">
+                <table class="table table-striped">
+                    <thead class="bg-primary text-white">
+                    <tr>
+                        <th>Catégorie</th>
+                        <th>Horaire</th>
+                        <th class="text-right">Prix</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
+                        <tr>
+                            <td>{{ course.category }}</td>
+                            <td>{{ course.time }}</td>
+                            <td class="text-right">{{ course.price }}€</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="4">Aucun cours trouvé</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="pt-0">
             <div class="d-flex justify-content-center py-2 text-center">
                 <a href="{{ path('app_login') }}"
                    class="button-primary text-decoration-none btn-lg rounded-pill my-4 px-5 py-3">
