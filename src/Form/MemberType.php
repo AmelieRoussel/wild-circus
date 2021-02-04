@@ -3,18 +3,16 @@
 namespace App\Form;
 
 use App\Entity\Member;
-use App\Repository\CourseRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Validator\Constraints\IsTrue;
 
-class EnrollmentType extends AbstractType
+class MemberType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -42,10 +40,6 @@ class EnrollmentType extends AbstractType
                 'multiple' => false,
                 'required' => true,
                 'attr' => ['class' => 'custom-select'],
-            ])
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'label' => 'Je m\'engage à régler la cotisation lors de la première séance, au risque de voir mon inscription annulée.'
             ])
         ;
     }
