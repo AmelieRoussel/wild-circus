@@ -3,3 +3,16 @@
 .header {
   background-image: url('../images/header_school.jpg');
 }
+
+.button-enrollment {
+  border: none;
+  outline: none;
+}
+
+.form-control {
+  color: $dark;
+
+  &::placeholder {
+    color: $secondary;
+  }
+}

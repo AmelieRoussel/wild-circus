@@ -33,6 +33,18 @@ body {
     li {
         font-size: $navbar-font-size;
     }
+
+    .dropdown-toggle::after {
+        margin-bottom: -6px;
+    }
+
+    .dropdown-item {
+        color: $light;
+
+        &:hover {
+            color: $dark;
+        }
+    }
 }
 
 .button-primary {

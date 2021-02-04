@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\MemberRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=MemberRepository::class)
@@ -19,21 +20,25 @@ class Member
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private string $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private string $firstname;
 
     /**
-     * @ORM\Column(type="string", length=80)
+     * @ORM\Column(type="datetime", length=80)
+     * @Assert\NotBlank
      */
     private $birthday;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Email
      */
     private string $mail;
 
@@ -83,12 +88,12 @@ class Member
         return $this;
     }
 
-    public function getBirthday(): ?string
+    public function getBirthday(): ?\DateTimeInterface
     {
         return $this->birthday;
     }
 
-    public function setBirthday(string $birthday): self
+    public function setBirthday(?\DateTimeInterface $birthday): self
     {
         $this->birthday = $birthday;
 
