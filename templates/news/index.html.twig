@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('news') }}
+{% endblock %}
+
+{% block body %}
+    <main class="news">
+        <div class="header mt-0 d-flex align-items-center justify-content-center">
+            <h1 class="text-center text-light">Actualités</h1>
+        </div>
+        <h2 class="text-center">
+            Découvrez les dernières actualités de votre cirque préféré !
+        </h2>
+
+        <div class="container mb-5">
+            {% for new in news %}
+                <div class="card border-0 bg-light my-5 py-5">
+                    <div class="row mx-0 no-gutters">
+                        <div class="col-md-3 d-flex justify-content-center align-items-center">
+                            <img src="{{ asset('uploads/' ~ new.illustration) }}"
+                                 class="card-img img-fluid illustration" alt="logo">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h3 class="card-title pt-0 mt-0">{{ new.title }}</h3>
+                                <div class="card-text">{{ new.presentation }}</div>
+                                <div class="card-text text-right">
+                                    <a href="{{ path('news_show', {id: new.id}) }}" class="text-primary text-decoration-none mr-2 font-weight-bold">Lire la suite</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

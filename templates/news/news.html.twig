@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('news') }}
+{% endblock %}
+
+{% block body %}
+    <main class="news">
+        <div class="header mt-0 d-flex align-items-center justify-content-center">
+            <h1 class="text-center text-light">Actualités</h1>
+        </div>
+        <h2 class="text-center">{{ news.title }}</h2>
+
+        <div class="container mb-5 pb-3">
+            <div class="col d-flex justify-content-center align-items-center my-4">
+                <img src="{{ asset('uploads/' ~ news.illustration) }}"
+                     class="illustration mb-4" alt="illustration">
+            </div>
+            <div class="col-md-10 offset-md-1 font-weight-bold my-4">{{ news.presentation}}</div>
+            <div class="col-md-10 offset-md-1 my-4">{{ news.content | raw }}</div>
+        </div>
+    </main>
+{% endblock %}
