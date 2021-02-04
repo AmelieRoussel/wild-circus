@@ -1,0 +1,13 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}{{ parent() }} | Ajouter un membre{% endblock %}
+{% block body %}
+    <h1 class="text-center mt-4">Ajouter un membre</h1>
+    <div class="new container ">
+        {{ include('admin/member/_form.html.twig') }}
+        <div class="row mx-0">
+            <a class="back text-decoration-none btn rounded-pill my-4 px-3 py-1"
+               href="{{ path('admin_member_index') }}">Retour</a>
+        </div>
+    </div>
+{% endblock %}
