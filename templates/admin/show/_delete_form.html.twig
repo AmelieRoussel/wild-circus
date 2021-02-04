@@ -1,7 +1,7 @@
-<form method="post" action="{{ path('admin_course_delete', {'id': course.id}) }}"
-      onsubmit="return confirm('Voulez-vous vraiment supprimer ce cours ?');">
+<form method="post" action="{{ path('admin_show_delete', {'id': show.id}) }}"
+      onsubmit="return confirm('Voulez-vous vraiment supprimer ce tarif ?');">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ course.id) }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ show.id) }}">
     <button class="text-primary btn p-0" title="Supprimer">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash"
              viewBox="0 0 16 16">

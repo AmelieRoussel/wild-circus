@@ -2,14 +2,14 @@
 
 namespace App\Form;
 
-use App\Entity\Course;
+use App\Entity\Show;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CourseType extends AbstractType
+class ShowType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -20,16 +20,13 @@ class CourseType extends AbstractType
             ->add('price', IntegerType::class, [
                 'label' => 'Prix'
             ])
-            ->add('time', TextType::class, [
-                'label' => 'Horaire'
-            ])
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Course::class,
+            'data_class' => Show::class,
         ]);
     }
 }

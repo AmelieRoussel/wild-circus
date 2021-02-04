@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Member;
 use App\Entity\User;
 use App\Form\EnrollmentType;
+use App\Repository\CourseRepository;
 use App\Repository\NewsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,13 +21,16 @@ class SchoolController extends AbstractController
 {
     /**
      * @Route("/", name="home", methods={"GET"})
+     * @param CourseRepository $courseRepository
      * @return Response
      */
-    public function index(): Response
+    public function index(CourseRepository $courseRepository): Response
     {
         $this->addFlash('danger', 'En raison de la crise sanitaire, l\'école n\'a pas pu ouvrir cette année.');
 
-        return $this->render('school/index.html.twig');
+        return $this->render('school/index.html.twig', [
+            'courses' => $courseRepository->findAll(),
+        ]);
     }
 
     /**

@@ -27,7 +27,7 @@ class Performance
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
-     * @Assert\Length
+     * @Assert\Length(max="255")
      */
     private string $name;
 
