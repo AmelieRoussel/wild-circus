@@ -17,7 +17,7 @@ class NewsFixtures extends Fixture
         for ($i=0; $i < 10; $i++) {
             $news = new News();
             $news->setTitle($faker->sentence);
-            $image = 'https://loremflickr.com/300/450/';
+            $image = 'https://loremflickr.com/400/450/';
             $imageName = uniqid() . '.jpg';
             copy($image, __DIR__ . '/../../public/uploads/' . $imageName);
             $news->setIllustration($imageName);

@@ -55,7 +55,7 @@ class AdminCategoryController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edition", name="edit", methods={"GET","POST"})
+     * @Route("/{id<^[0-9]+$>}/edition", name="edit", methods={"GET","POST"})
      * @param Request $request
      * @param Category $category
      * @return Response
@@ -80,7 +80,7 @@ class AdminCategoryController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="delete", methods={"DELETE"})
+     * @Route("/{id<^[0-9]+$>}", name="delete", methods={"DELETE"})
      * @param Request $request
      * @param Category $category
      * @return Response

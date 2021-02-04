@@ -10,7 +10,7 @@
         <div class="header mt-0 d-flex align-items-center justify-content-center">
             <h1 class="text-center text-light">Actualités</h1>
         </div>
-        <h2 class="text-center reveal-2">
+        <h2 class="text-center">
             Découvrez les dernières actualités de votre cirque préféré !
         </h2>
 
@@ -27,7 +27,7 @@
                                 <h3 class="card-title pt-0 mt-0">{{ new.title }}</h3>
                                 <div class="card-text">{{ new.presentation }}</div>
                                 <div class="card-text text-right">
-                                    <a href="" class="text-primary text-decoration-none mr-2 font-weight-bold">Lire la suite</a>
+                                    <a href="{{ path('news_show', {id: new.id}) }}" class="text-primary text-decoration-none mr-2 font-weight-bold">Lire la suite</a>
                                 </div>
                             </div>
                         </div>
