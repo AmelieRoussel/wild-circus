@@ -16,9 +16,25 @@
             <li class="nav-item ml-3">
                 <a class="nav-link text-light" href="{{ path("performance") }}">Performances</a>
             </li>
-            <li class="nav-item ml-3">
-                <a class="nav-link text-light" href="{{ path("school_home") }}">L'école</a>
-            </li>
+            {% if is_granted("ROLE_USER") %}
+                <li class="nav-link ml-3 dropdown">
+                    <a class="dropdown-toggle text-light text-decoration-none" href="#" role="button"
+                       id="dropdownMenu"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        L'école
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenu">
+                        <a class="dropdown-item" href="{{ path("school_home") }}">Présentation</a>
+                        <a class="dropdown-item" href="">Actualités</a>
+                        <a class="dropdown-item" href="{{ path("school_enrollment") }}">Inscription</a>
+                    </div>
+                </li>
+            {% else %}
+                <li class="nav-item ml-3">
+                    <a class="nav-link text-light" href="{{ path("school_home") }}">L'école</a>
+                </li>
+            {% endif %}
             <li class="nav-item ml-3">
                 <a class="nav-link text-light" href="#">Tarifs</a>
             </li>
@@ -26,9 +42,9 @@
                 <a class="nav-link text-light" href="{{ path("contact") }}">Contact</a>
             </li>
             {% if is_granted("ROLE_ADMIN") %}
-            <li class="nav-item ml-3">
-                <a class="nav-link text-light" href="{{ path("admin_home") }}">Administration</a>
-            </li>
+                <li class="nav-item ml-3">
+                    <a class="nav-link text-light" href="{{ path("admin_home") }}">Administration</a>
+                </li>
             {% endif %}
             <li class="nav-item ml-3">
                 {% if app.user %}
