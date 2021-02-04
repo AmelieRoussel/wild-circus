@@ -11,32 +11,32 @@
     </div>
     <main class="container">
         <h2 class="text-center">Venez vous initier à l'art du cirque</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit diam sem, eu mattis ante
-            mattis ut.
-            Ut consectetur placerat risus, et consectetur nisl. Sed a scelerisque orci, vel mollis odio. Sed
-            vitae tempus neque.
-            Morbi vitae fringilla nunc. Nunc sit amet pretium magna. Nullam non ipsum diam. Vestibulum fringilla
-            risus nec tempor facilisis.
-            Sed elementum magna eget purus tincidunt, consequat ornare leo facilisis. Donec nibh erat, sagittis
-            id ligula blandit,
-            ullamcorper egestas risus. Etiam tincidunt nunc elit, quis scelerisque nisl luctus ac. Donec non
-            porta sem, vel iaculis enim.
-            Donec ultricies urna ac quam pellentesque efficitur. In interdum dignissim mauris sed ornare. Donec
-            aliquam, felis ac lobortis consectetur,
-            ligula mi luctus felis, commodo placerat dui erat eu nisl.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit diam sem, eu mattis ante
-            mattis ut.
-            Ut consectetur placerat risus, et consectetur nisl. Sed a scelerisque orci, vel mollis odio. Sed
-            vitae tempus neque.
-            Morbi vitae fringilla nunc. Nunc sit amet pretium magna. Nullam non ipsum diam. Vestibulum fringilla
-            risus nec tempor facilisis.
-            Sed elementum magna eget purus tincidunt, consequat ornare leo facilisis. Donec nibh erat, sagittis
-            id ligula blandit,
-            ullamcorper egestas risus. Etiam tincidunt nunc elit, quis scelerisque nisl luctus ac. Donec non
-            porta sem, vel iaculis enim.
-            Donec ultricies urna ac quam pellentesque efficitur. In interdum dignissim mauris sed ornare. Donec
-            aliquam, felis ac lobortis consectetur,
-            ligula mi luctus felis, commodo placerat dui erat eu nisl.</p>
+        <p>La création artistique est un puissant vecteur d'expression de soi, dans un cadre individuel ou collectif. Le
+            Wild Circus inscrit sa réflexion sur l'éducation artistique et la pratique amateur à la fois dans une
+            logique
+            d'éducation globale de l'individu et dans une intention de construction d'un projet collectif.</p>
+        <p>Fidèle à ces valeurs, le Wild Circus a pris l'habitude de présenter l'éducation aux arts du cirque à travers
+            trois
+            enjeux indissociables : l'enjeu artistique, l'enjeu éducatif et l'enjeu corporel. C'est la prise en compte
+            globale et simultanée de ces enjeux par l'éducateur qui donne toute sa richesse à son intervention. La FFEC
+            défend donc une approche où le « faire » se retrouve à parité avec le «percevoir », un ballet entre création
+            et découverte, dans un incessant aller-retour.</p>
+        <h3 class="mt-5">L'enjeu artistique</h3>
+        <p>Il s'agit de mettre l'individu en situation de créer, de donner sens et intentionnalité à un geste, de mûrir
+            un imaginaire…La rencontre avec l'œuvre est une dimension fondamentale de l'éducation artistique comme l'est
+            également l'exercice d'une discipline artistique. Dans l'effort de transmission de cette pratique, l'enjeu
+            artistique doit être continuellement réaffirmé.</p>
+        <h3 class="mt-5">L'enjeu éducatif</h3>
+        <p>Dans les disciplines du cirque plus que dans d'autres, l'éducateur et l'enfant se confrontent à l'échec et à
+            sa répétition, à la peur et au risque. L'activité permet de développer le goût de l'effort, la ténacité, le
+            dépassement de soi, la construction collective d'un mouvement, la compréhension de la différence, le respect
+            de l'autre….Autant de qualités qui, réinvesties dans la vie en société, contribueront au développement de
+            l'individu et au bien commun.</p>
+        <h3 class="mt-5"> L'enjeu corporel</h3>
+        <p>Être à l'écoute de son corps et de ses limites, gérer ses déséquilibres et le rapport « prise de
+            risque/sécurité », se mouvoir dans l'espace en quittant ses appuis terrestres, sont autant de prétextes à la
+            (re)découverte de son corps, le plus souvent dans des dimensions inexplorées. De ce point de vue, le cirque
+            est un formidable outil de prise de conscience corporelle.</p>
         <section class="price">
             <div class="container">
                 <table class="table table-striped">
@@ -65,10 +65,17 @@
         </section>
         <section class="pt-0">
             <div class="d-flex justify-content-center py-2 text-center">
-                <a href="{{ path('app_login') }}"
-                   class="button-primary text-decoration-none btn-lg rounded-pill my-4 px-5 py-3">
-                    Connectez-vous pour vous inscrire
-                </a>
+                {% if app.user %}
+                    <a href="{{ path('school_enrollment') }}"
+                       class="button-primary text-decoration-none btn-lg rounded-pill my-4 px-5 py-3">
+                        Inscrivez-vous
+                    </a>
+                {% else %}
+                    <a href="{{ path('app_login') }}"
+                       class="button-primary text-decoration-none btn-lg rounded-pill my-4 px-5 py-3">
+                        Connectez-vous pour vous inscrire
+                    </a>
+                {% endif %}
             </div>
         </section>
     </main>

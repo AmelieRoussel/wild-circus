@@ -39,7 +39,7 @@ class MemberType extends AbstractType
             ])
             ->add('course', null, [
                 'label' => 'Cours choisi',
-                'choice_label' => 'category',
+                'choice_label' => 'time',
                 'expanded' => false,
                 'multiple' => false,
                 'required' => true,
