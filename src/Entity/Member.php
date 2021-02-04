@@ -21,12 +21,14 @@ class Member
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
+     * @Assert\Length
      */
     private string $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
+     * @Assert\Length
      */
     private string $firstname;
 
@@ -39,6 +41,7 @@ class Member
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Email
+     * @Assert\Length
      */
     private string $mail;
 

@@ -4,3 +4,18 @@
     {{ parent() }}
     {{ encore_entry_link_tags('admin') }}
 {% endblock %}
+
+{% block body %}
+    <main>
+        <div class="mt-0 d-flex align-items-center justify-content-center">
+            <h1 class="text-center text-primary">Panneau admin</h1>
+        </div>
+
+        <div class="container mb-5 pb-3">
+            <div class="col d-flex justify-content-center align-items-center my-4">
+                <img src="{{ asset('build/images/header_admin.jpg') }}"
+                     class="illustration mb-4" alt="illustration">
+            </div>
+        </div>
+    </main>
+{% endblock %}

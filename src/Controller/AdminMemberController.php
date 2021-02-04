@@ -28,7 +28,7 @@ class AdminMemberController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="new", methods={"GET","POST"})
+     * @Route("/ajout", name="new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -67,7 +67,7 @@ class AdminMemberController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
+     * @Route("/{id}/edition", name="edit", methods={"GET","POST"})
      * @param Request $request
      * @param Member $member
      * @return Response
