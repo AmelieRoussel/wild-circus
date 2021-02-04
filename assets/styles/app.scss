@@ -73,9 +73,15 @@ h4, h5, h6 {
 
 h1 {
     font-size: $h1-font-size;
-    padding-top: $spacing4;
-    margin-bottom: $spacing3;
+    padding: 0;
+    margin: 0;
     text-shadow: 1px 1px $dark, -1px -1px $dark;
+}
+
+@media screen and (max-width: 575px) {
+    h1 {
+        font-size: $h1-font-size-responsive;
+    }
 }
 
 h2 {

@@ -1,8 +1,10 @@
 @import 'variable.scss';
 
 .header {
-  background-image: url('../images/header_homepage2.jpg');
+  background-image: url('../images/header_homepage.jpg');
   height: 92vh;
+
+  font-family: $title-font;
 }
 
 .about-us {

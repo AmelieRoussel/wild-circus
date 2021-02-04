@@ -1,5 +1,15 @@
 @import 'variable.scss';
 
+h1 {
+  text-shadow: none;
+  padding-top: $spacing4;
+  margin-bottom: $spacing3;
+}
+
+.navbar {
+  opacity: 1;
+}
+
 .button-list {
   a, form {
     margin: $spacing2;
