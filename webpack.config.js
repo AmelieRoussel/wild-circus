@@ -35,6 +35,7 @@ Encore
     .addEntry('app', './assets/app.js')
     .addEntry('contact', './assets/styles/contact.scss')
     .addEntry('home', './assets/styles/home.scss')
+    .addEntry('news', './assets/styles/news.scss')
     .addEntry('school', './assets/styles/school.scss')
     .addEntry('login', './assets/styles/login.scss')
     .addEntry('performance', './assets/styles/performance.scss')
