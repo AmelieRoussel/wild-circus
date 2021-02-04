@@ -11,9 +11,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/member", name="admin_member_")
+ * @Route("/admin/membre", name="admin_member_")
  */
-class MemberController extends AbstractController
+class AdminMemberController extends AbstractController
 {
     /**
      * @Route("/", name="index", methods={"GET"})
