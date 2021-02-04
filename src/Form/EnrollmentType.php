@@ -21,19 +21,23 @@ class EnrollmentType extends AbstractType
         $builder
             ->add('lastname', TextType::class, [
                 'label' => 'Nom de famille',
+                'attr' => ['placeholder' => 'Dupont']
             ])
             ->add('firstname', TextType::class, [
                 'label' => 'Prénom',
+                'attr' => ['placeholder' => 'Pierre']
             ])
             ->add('birthday', BirthdayType::class, [
                 'label' => 'Date de naissance',
             ])
             ->add('mail', EmailType::class, [
                 'label' => 'Adresse email',
+                'attr' => ['placeholder' => 'pierre.dupont@email.fr']
             ])
             ->add('phoneNumber', TelType::class, [
                 'label' => 'Numéro de téléphone (optionnel)',
                 'required' => false,
+                'attr' => ['placeholder' => '0654678534']
             ])
             ->add('course', null, [
                 'label' => 'Créneau de cours choisi',

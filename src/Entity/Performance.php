@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PerformanceRepository::class)
@@ -25,6 +26,8 @@ class Performance
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length
      */
     private string $name;
 
@@ -36,6 +39,7 @@ class Performance
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     private string $description;
 

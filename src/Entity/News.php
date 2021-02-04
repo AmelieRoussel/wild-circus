@@ -7,6 +7,7 @@ use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=NewsRepository::class)
@@ -23,16 +24,21 @@ class News
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length
+     * @Assert\NotBlank
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length
+     * @Assert\NotBlank
      */
     private $presentation;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     private $content;
 

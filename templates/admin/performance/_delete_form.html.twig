@@ -1,5 +1,5 @@
 <form method="post" action="{{ path('admin_performance_delete', {'id': performance.id}) }}"
-      onsubmit="return confirm('Voulez-vous vraiment supprimer cette Performance ?');">
+      onsubmit="return confirm('Voulez-vous vraiment supprimer cette performance ?');">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ performance.id) }}">
     <button class="text-primary btn p-0" title="Supprimer">
